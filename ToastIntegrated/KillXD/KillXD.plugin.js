@@ -1,4 +1,4 @@
-//META{"name":"KillXD","displayName":"KillXD","website":"https://github.com/Arashiryuu","source":"https://github.com/Arashiryuu/crap/blob/master/ToastIntegrated/KillXD/KillXD.plugin.js"}*//
+//META{"name":"Killperdon"displayName":"KillXD","website":"https://github.com/Arashiryuu","source":"https://github.com/Arashiryuu/crap/blob/master/ToastIntegrated/KillXD/KillXD.plugin.js"}*//
 
 /*@cc_on
 @if (@_jscript)
@@ -24,14 +24,14 @@
 
 @else@*/
 
-var KillXD = (() => {
+var Killperdon = (() => {
 
 	/* Setup */
 
 	const config = {
 		main: 'index.js',
 		info: {
-			name: 'KillXD',
+			name: 'Killperdon',
 			authors: [
 				{
 					name: 'Arashiryuu',
@@ -41,9 +41,9 @@ var KillXD = (() => {
 				}
 			],
 			version: '2.0.0',
-			description: 'Replaces XDs in messages.',
+			description: 'Replaces perdons in messages.',
 			github: 'https://github.com/Arashiryuu',
-			github_raw: 'https://raw.githubusercontent.com/Arashiryuu/crap/master/ToastIntegrated/KillXD/KillXD.plugin.js'
+			github_raw: 'https://raw.githubusercontent.com/Arashiryuu/crap/master/ToastIntegrated/Killperdon/Killperdon.plugin.js'
 		},
 		changelog: [
 			{
@@ -96,17 +96,17 @@ var KillXD = (() => {
 											if (msg.type === 'code') {
 												const i = this.getProps(msg, 'props.children');
 												if (!i) return msg;
-												if (!Array.isArray(i)) return (msg.props.children = i.replace(this.regex, 'I\'m a retard lol.')), msg;
+												if (!Array.isArray(i)) return (msg.props.children = i.replace(this.regex, 'soy retrasada')), msg;
 											} else if (msg.type === 'pre') {
 												const i = this.getProps(msg, 'props.children.props.children');
 												if (!i) return msg;
-												if (!Array.isArray(i)) return (msg.props.children.props.children = i.replace(this.regex, 'I\'m a retard lol.'), msg);
+												if (!Array.isArray(i)) return (msg.props.children.props.children = i.replace(this.regex, 'soy retrasada'), msg);
 											}
 											return msg;
 										}
 										const matches = msg.match(this.regex);
 										if (!matches || !matches.length) return msg;
-										return msg.replace(this.regex, 'I\'m a retard lol.');
+										return msg.replace(this.regex, 'soy retrasada');
 									});
 								}
 							}
